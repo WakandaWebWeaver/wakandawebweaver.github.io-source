@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+.fluid-container {
+  position: relative;
+  width: 100%;
+  /* Adjust height to be responsive */
+  height: auto;
+  min-height: 120px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-bottom: 10px; /* Add some bottom margin instead of relying on height */
+}
+
+.fluid-container h2 {
+  position: absolute;
+  font-size: 5rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.fluid-container h2:nth-child(1) {
+  color: #fff;
+  text-shadow: -2px 2px 0px #111827, -4px 4px 0px #111827, -6px 6px 0px #111827,
+    -8px 8px 0px #111827, -18px 18px 20px rgba(0, 0, 0, 0.5),
+    -18px 18px 50px rgba(0, 0, 0, 0.5);
+}
+
+.fluid-container h2:nth-child(2) {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: animate 3s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.fluid-container h2:nth-child(3) {
+  background: linear-gradient(90deg, #ec4899, #79ebff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.7;
+  animation: animate 6s ease-in-out infinite;
+}
+
+.fluid-container h2:nth-child(4) {
+  background: linear-gradient(90deg, #06b6d4, #6c0966);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(
+      0 46%,
+      15% 45%,
+      34% 52%,
+      50% 61%,
+      68% 65%,
+      85% 61%,
+      100% 53%,
+      100% 100%,
+      0% 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      3% 59%,
+      17% 67%,
+      36% 70%,
+      51% 66%,
+      65% 56%,
+      81% 49%,
+      99% 45%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+@media (max-width: 1200px) {
+  .fluid-container {
+    min-height: 100px;
+  }
+  .fluid-container h2 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fluid-container {
+    min-height: 80px;
+    margin-bottom: 8px;
+  }
+  .fluid-container h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fluid-container {
+    min-height: 60px;
+    margin-bottom: 6px;
+  }
+  .fluid-container h2 {
+    font-size: 2.5rem;
+  }
+}
