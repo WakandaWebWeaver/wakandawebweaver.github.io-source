@@ -12,6 +12,17 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
+      title: "Prometheus - lightweight version control system",
+      description:
+        "A custom version control system for files and folders, implementing repositories, branches and commits. Built with Python, Hosted on Appwrite and Firebase.",
+      date: "April 2025",
+      category: "web",
+      tags: ["Python", "Appwrite", "Firebase"],
+      github: "",
+      imagePaths: [],
+    },
+    {
+      id: 2,
       title: "PRism - AI powered Contribution Helper",
       description:
         "A web application that helps developers find open source projects to contribute to, using AI to match skills and interests.",
@@ -25,7 +36,7 @@ export default function Projects() {
       ],
     },
     {
-      id: 2,
+      id: 3,
       title: "VChat - Flutter Chat App",
       description:
         "A chat application built with Flutter & Firebase, featuring message sharing, image sharing, and post creation.",
@@ -36,7 +47,7 @@ export default function Projects() {
       imagePaths: [],
     },
     {
-      id: 3,
+      id: 4,
       title: "Nudity Detection",
       description:
         "An ML model/program to detect nudity in images using TensorFlow, Keras & OpenCV.",
@@ -47,7 +58,7 @@ export default function Projects() {
       imagePaths: [],
     },
     {
-      id: 4,
+      id: 5,
       title: "HiveMind",
       description:
         "A social media platform for students. Built with AWS, MongoDB & Flask.",
@@ -58,7 +69,7 @@ export default function Projects() {
       imagePaths: [],
     },
     {
-      id: 7,
+      id: 6,
       title: "Organisation Management Tool",
       description:
         "A platform for tracking users, donations and events, built with Flask & MongoDB.",
@@ -117,39 +128,41 @@ export default function Projects() {
 
   return (
     <section className="relative py-20">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center mb-12 p-4">
-          <div className="flex-1 h-px mr-4 bg-gradient-to-r from-cyan-300/40 to-purple-500/40"></div>
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-300 to-purple-500 bg-clip-text text-transparent whitespace-nowrap">
-            Projects
-          </h2>
-        </div>
+      <div className="max-w-6xl mx-auto p-8 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-lg shadow-cyan-500/10">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center mb-12 p-4">
+            <div className="flex-1 h-px mr-4 bg-gradient-to-r from-cyan-300/40 to-purple-500/40"></div>
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-300 to-purple-500 bg-clip-text text-transparent whitespace-nowrap">
+              Projects
+            </h2>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-slate-800 p-6 rounded-xl hover:shadow-cyan-500/20 border border-slate-700 cursor-pointer"
-              onClick={() => {
-                if (!isMobile) setActiveProject(project);
-              }}
-            >
-              <h3 className="text-xl font-semibold text-white mb-2">
-                {project.title}
-              </h3>
-              <p className="text-slate-400">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mt-3">
-                {project.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 rounded-full text-xs bg-slate-900 text-slate-300 border border-slate-700"
-                  >
-                    {tag}
-                  </span>
-                ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="bg-slate-800 p-6 rounded-xl hover:shadow-cyan-500/20 border border-slate-700 cursor-pointer"
+                onClick={() => {
+                  if (!isMobile) setActiveProject(project);
+                }}
+              >
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-slate-400">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 rounded-full text-xs bg-slate-900 text-slate-300 border border-slate-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 

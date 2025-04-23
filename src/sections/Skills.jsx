@@ -115,69 +115,71 @@ export default function Skills() {
 
   return (
     <section id="skills" ref={sectionRef} className="relative z-10 py-20">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center mb-12 p-4">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-300 to-purple-500 bg-clip-text text-transparent whitespace-nowrap">
-            Skills
-          </h2>
-          <div className="flex-1 h-px ml-4 bg-gradient-to-r from-cyan-300/40 to-purple-500/40"></div>
-        </div>
-
-        <motion.div
-          initial="hidden"
-          animate={controls}
-          variants={tabsVariants}
-          className="flex justify-center mb-10"
-        >
-          <div className="inline-flex p-1 rounded-lg bg-slate-800/70 backdrop-blur-sm">
-            {Object.keys(skills).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveSkillTab(tab)}
-                className={`py-2 px-6 rounded-md font-medium transition-all ${
-                  activeSkillTab === tab
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
-                    : 'text-slate-300 hover:text-white'
-                }`}
-              >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </button>
-            ))}
+      <div className="max-w-6xl mx-auto p-8 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-lg shadow-cyan-500/10">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center mb-12 p-4">
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-300 to-purple-500 bg-clip-text text-transparent whitespace-nowrap">
+              Skills
+            </h2>
+            <div className="flex-1 h-px ml-4 bg-gradient-to-r from-cyan-300/40 to-purple-500/40"></div>
           </div>
-        </motion.div>
 
-        <div className="relative min-h-[260px] mb-auto">
-          <AnimatePresence mode="wait">
-            <motion.div 
-              key={activeSkillTab}
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
-            >
-              {skills[activeSkillTab].map((skill, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.05 }}
-                  onClick={() => setSelectedSkill(skill)}
-                  className="group cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm p-4 rounded-lg border border-slate-700/50 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10"
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            variants={tabsVariants}
+            className="flex justify-center mb-10"
+          >
+            <div className="inline-flex p-1 rounded-lg bg-slate-800/70 backdrop-blur-sm">
+              {Object.keys(skills).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveSkillTab(tab)}
+                  className={`py-2 px-6 rounded-md font-medium transition-all ${
+                    activeSkillTab === tab
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
+                      : 'text-slate-300 hover:text-white'
+                  }`}
                 >
-                  <div className="h-12 flex items-center justify-center mb-3">
-                    <div className="w-10 h-10 rounded-md bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center">
-                      <span className="text-lg font-bold bg-gradient-to-r from-cyan-300 to-purple-500 bg-clip-text text-transparent group-hover:opacity-100 transition-opacity">
-                        {skill.charAt(0)}
-                      </span>
-                    </div>
-                  </div>
-                  <h3 className="text-center font-medium text-slate-300 group-hover:text-white transition-colors">
-                    {skill}
-                  </h3>
-                </motion.div>
+                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </button>
               ))}
-            </motion.div>
-          </AnimatePresence>
+            </div>
+          </motion.div>
+
+          <div className="relative min-h-[260px] mb-auto">
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={activeSkillTab}
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
+              >
+                {skills[activeSkillTab].map((skill, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.05 }}
+                    onClick={() => setSelectedSkill(skill)}
+                    className="group cursor-pointer bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm p-4 rounded-lg border border-slate-700/50 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10"
+                  >
+                    <div className="h-12 flex items-center justify-center mb-3">
+                      <div className="w-10 h-10 rounded-md bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center">
+                        <span className="text-lg font-bold bg-gradient-to-r from-cyan-300 to-purple-500 bg-clip-text text-transparent group-hover:opacity-100 transition-opacity">
+                          {skill.charAt(0)}
+                        </span>
+                      </div>
+                    </div>
+                    <h3 className="text-center font-medium text-slate-300 group-hover:text-white transition-colors">
+                      {skill}
+                    </h3>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
 
