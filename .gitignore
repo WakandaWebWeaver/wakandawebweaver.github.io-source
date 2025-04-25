@@ -30,3 +30,4 @@ coverage
 
 # local build info
 *.tsbuildinfo
+/src/assets/certs
