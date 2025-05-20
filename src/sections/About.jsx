@@ -62,7 +62,7 @@ export default function About() {
                   whileHover={{ scale: activeImage ? 1 : 1.05 }}
                 >
                   <img 
-                    src="src/assets/images/musician.jpg" 
+                    src="assets/images/musician.jpg" 
                     alt="Developer portrait left" 
                     className="w-full h-full object-cover mix-blend-overlay transition-all duration-300" 
                   />
@@ -87,7 +87,7 @@ export default function About() {
                   whileHover={{ scale: activeImage ? 1 : 1.05 }}
                 >
                   <img 
-                    src="src/assets/images/profile_main.jpg" 
+                    src="assets/images/profile_main.jpg" 
                     alt="Developer portrait right" 
                     className="w-full h-full object-cover mix-blend-overlay transition-all duration-300" 
                   />
@@ -111,7 +111,7 @@ export default function About() {
                   whileHover={{ scale: activeImage ? 1 : 1.05 }}
                 >
                   <img 
-                    src="src/assets/images/profile.jpg" 
+                    src="assets/images/profile.jpg" 
                     alt="Developer portrait main" 
                     className="w-full h-full object-cover mix-blend-overlay transition-all duration-300" 
                   />

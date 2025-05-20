@@ -10,7 +10,7 @@ import ProjectCarousel from "../sections/OneHub";
 
 export default function Home() {
   return (
-    <>
+    <div className="m-12 p-4 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-xl">
       <Hero />
       <About />
       <Skills />
@@ -19,6 +19,6 @@ export default function Home() {
       <Certificates />
       <Experience />
       <Contact />
-    </>
+    </div>
   );
 }
