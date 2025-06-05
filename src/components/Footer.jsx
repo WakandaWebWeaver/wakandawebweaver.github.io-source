@@ -26,6 +26,10 @@ export default function PortfolioFooter() {
               <br />
               Feel free to reach out if you have any questions or would like to collaborate.
             </p>
+            <hr className="my-4 border-slate-700" />
+            <p className="text-slate-500 text-xs">
+              Wavy background pattern by <a href="https://uiverse.io/profile/csemszepp" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200">Csem Szep</a> on <a href="https://uiverse.io/" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200">Uiverse</a>.
+            </p>
           </div>
           <div className="flex space-x-3">
             <a href="https://github.com/wakandawebweaver" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-colors duration-200 border border-slate-700">
